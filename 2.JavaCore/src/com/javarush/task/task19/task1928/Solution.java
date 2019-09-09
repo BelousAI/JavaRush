@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class Solution {
     {
-        System.out.println("it's Solution class");
+        System.out.println("This is the Solution class");
     }
 
     public static void main(String... args) throws IOException {
@@ -56,19 +56,19 @@ public class Solution {
 
     class A implements Example {
         {
-            System.out.println("it's A class");
+            System.out.println("This is the A class");
         }
     }
 
     class B implements Example {
         {
-            System.out.println("it's B class");
+            System.out.println("This is the B class");
         }
     }
 
     class C extends A {
         {
-            System.out.println("it's C class");
+            System.out.println("This is the C class");
         }
     }
 }

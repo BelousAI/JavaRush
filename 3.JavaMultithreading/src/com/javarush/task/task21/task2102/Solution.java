@@ -8,15 +8,15 @@ import java.lang.reflect.Modifier;
 */
 public class Solution {
     public static void main(String[] args) {
-        int modifiersOfThisClass = Solution.class.getModifiers();
-        System.out.println(isAllModifiersContainSpecificModifier(modifiersOfThisClass, Modifier.PUBLIC));   //true
-        System.out.println(isAllModifiersContainSpecificModifier(modifiersOfThisClass, Modifier.STATIC));   //false
+        int classModifiers = Solution.class.getModifiers();
+        System.out.println(isModifierSet(classModifiers, Modifier.PUBLIC));   //true
+        System.out.println(isModifierSet(classModifiers, Modifier.STATIC));   //false
 
-        int modifiersOfMethod = getMainMethod().getModifiers();
-        System.out.println(isAllModifiersContainSpecificModifier(modifiersOfMethod, Modifier.STATIC));      //true
+        int methodModifiers = getMainMethod().getModifiers();
+        System.out.println(isModifierSet(methodModifiers, Modifier.STATIC));      //true
     }
 
-    public static boolean isAllModifiersContainSpecificModifier(int allModifiers, int specificModifier) {
+    public static boolean isModifierSet(int allModifiers, int specificModifier) {
         return false;
     }
 
