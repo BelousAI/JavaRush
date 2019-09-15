@@ -1,5 +1,7 @@
 package com.javarush.task.task21.task2102;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
@@ -17,7 +19,13 @@ public class Solution {
     }
 
     public static boolean isModifierSet(int allModifiers, int specificModifier) {
-        return false;
+        if (Modifier.PUBLIC == specificModifier) {
+            return Modifier.isPublic(allModifiers);
+        }
+        else if (Modifier.STATIC == specificModifier) {
+            return Modifier.isStatic(allModifiers);
+        }
+        else return false;
     }
 
     private static Method getMainMethod() {
