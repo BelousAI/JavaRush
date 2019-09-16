@@ -1,6 +1,4 @@
-taskKey="com.javarush.task.task21.task2104"
-
-Equals and HashCode
+taskKey="com.javarush.task.task21.task2104"\n\nEquals and HashCode
 
 В классе Solution исправить пару методов equals/hashCode в соответствии с правилами реализации этих методов(детали уточни у своего любимого поисковика).
 Обе строки first и last должны принимать участие в сравнении с помощью метода equals и вычислении hashcode.
