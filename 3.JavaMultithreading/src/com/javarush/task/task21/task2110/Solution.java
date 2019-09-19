@@ -18,7 +18,7 @@ public class Solution {
     public static void writeZipEntriesToFile(String zipFileName, String outputFileName) {
         Charset charset = StandardCharsets.UTF_8;
         Path outputFilePath = Paths.get(outputFileName);
-        
+
         try (BufferedWriter writer = Files.newBufferedWriter(outputFilePath, charset);
              ZipFile zip = new ZipFile(zipFileName)) {
 
