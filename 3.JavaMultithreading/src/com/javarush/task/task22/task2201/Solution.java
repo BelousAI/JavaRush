@@ -24,7 +24,7 @@ public class Solution {
         this.thread2 = new Thread(new Task(this, "J\tK\tL\tM\tN\tO\tP\tQ\tR\tS\tT\tU\tV\tW\tX\tY\tZ"), SECOND_THREAD_NAME);
         this.thread3 = new Thread(new Task(this, "\t\t"), "3#");
 
-        Thread.setDefaultUncaughtExceptionHandler(new ThisUncaughtExceptionHandler());
+        Thread.setDefaultUncaughtExceptionHandler(new OurUncaughtExceptionHandler());
 
         this.thread1.start();
         this.thread2.start();
@@ -32,6 +32,19 @@ public class Solution {
     }
 
     public synchronized String getPartOfString(String string, String threadName) {
-        return null;
+        if (string == null && threadName.equals(FIRST_THREAD_NAME)) {
+            throw new StringForFirstThreadTooShortException();
+        }
+        if (string == null && threadName.equals(SECOND_THREAD_NAME)) {
+            throw new StringForSecondThreadTooShortException();
+        }
+        else if (string == null) {
+            throw new RuntimeException();
+        }
+
+        int start = string.indexOf("\t") + 2;
+        int finish = string.lastIndexOf("\t");
+
+        return string.substring(start, finish);
     }
 }
