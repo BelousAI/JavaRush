@@ -1,6 +1,4 @@
-taskKey="com.javarush.task.task22.task2203"
-
-Между табуляциями
+taskKey="com.javarush.task.task22.task2203"\n\nМежду табуляциями
 
 Метод getPartOfString должен возвращать подстроку между первой и второй табуляцией.
 На некорректные данные бросить исключение TooShortStringException.
