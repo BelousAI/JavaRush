@@ -8,10 +8,22 @@ public class Solution {
         System.out.println(getPartOfString("JavaRush - лучший сервис обучения Java."));
     }
 
-    public static String getPartOfString(String string) {
-        return null;
+    public static String getPartOfString(String string) throws TooShortStringException {
+        if (string == null) {
+            throw new TooShortStringException();
+        }
+
+        String[] array = string.split(" ");
+
+        if (array.length < 5) {
+            throw new TooShortStringException();
+        }
+
+        return array[1] + " " + array[2] + " " +
+                array[3] + " " + array[4];
     }
 
-    public static class TooShortStringException {
+    public static class TooShortStringException extends RuntimeException {
+
     }
 }
