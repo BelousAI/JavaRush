@@ -1,6 +1,4 @@
-taskKey="com.javarush.task.task22.task2205"
-
-МНЕ нравится курс JavaRush
+taskKey="com.javarush.task.task22.task2205"\n\nМНЕ нравится курс JavaRush
 
 Исправить метод getFormattedString так, чтобы он возвращал строку с параметрами для форматирования.
 Параметры должны меняться местами.
