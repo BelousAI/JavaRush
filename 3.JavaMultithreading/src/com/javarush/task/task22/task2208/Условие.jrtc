@@ -1,13 +1,11 @@
-taskKey="com.javarush.task.task22.task2208"
-
-Формируем WHERE
+taskKey="com.javarush.task.task22.task2208"\n\nФормируем WHERE
 
 Сформируй часть запроса WHERE используя StringBuilder.
 Если значение null, то параметр не должен попадать в запрос.
 Пример:
-{"name", "Ivanov", "country", "Ukraine", "city", "Kiev", "age", null}
+{name=Ivanov, country=Ukraine, city=Kiev, age=null}
 Результат:
-"name = 'Ivanov' and country = 'Ukraine' and city = 'Kiev'"
+name = 'Ivanov' and country = 'Ukraine' and city = 'Kiev'
 
 
 Требования:
