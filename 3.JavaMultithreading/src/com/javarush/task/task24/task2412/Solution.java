@@ -43,7 +43,7 @@ public class Solution {
                 String name1 = (String) stock1.get("name");
                 String name2 = (String) stock2.get("name");
                 int result = name1.compareTo(name2);
-                
+
                 if (result == 0) {
                     SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
                     Date date1 = (Date) stock1.get("date");
