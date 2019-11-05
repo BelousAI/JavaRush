@@ -1,5 +1,7 @@
 package com.javarush.task.task25.task2503;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -49,19 +51,21 @@ public enum Column implements Columnable {
      * @return список колонок
      */
     public static List<Column> getVisibleColumns() {
-        List<Column> result = new LinkedList<>();
+        List<Column> result = new LinkedList<Column>();
 
-        Column columnFinished = null;
-        
         for (Column column : values()) {
             if (column.isShown()) {
-                if (columnFinished == null) {
-                    columnFinished = column;
-                }
-                result.add(columnFinished);
+                result.add(column);
             }
         }
+        Comparator<Column> comparator = new Comparator<Column>() {
+            @Override
+            public int compare(Column o1, Column o2) {
+                return realOrder[o1.ordinal()] - realOrder[o2.ordinal()];
+            }
+        };
 
+        result.sort(comparator);
         return result;
     }
 
