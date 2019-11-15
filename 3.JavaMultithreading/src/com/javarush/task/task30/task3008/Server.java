@@ -7,20 +7,16 @@ import java.net.Socket;
 public class Server {
     public static void main(String[] args) {
         try {
-            ServerSocket server = null;
-            try {
-                int port = ConsoleHelper.readInt();
+            try (ServerSocket server = new ServerSocket(ConsoleHelper.readInt())) {
                 System.out.println("Сервер успешно запущен");
-                server = new ServerSocket(port);
 
                 while (true) {
                     Socket clientSocket = server.accept();
-                    Server.Handler handler = new Server.Handler(clientSocket);
+                    Handler handler = new Handler(clientSocket);
+                    handler.start();
                 }
-            } finally {
-                server.close();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
