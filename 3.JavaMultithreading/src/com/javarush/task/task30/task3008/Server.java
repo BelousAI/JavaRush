@@ -12,7 +12,7 @@ public class Server {
     public static void main(String[] args) {
         try {
             try (ServerSocket server = new ServerSocket(ConsoleHelper.readInt())) {
-                System.out.println("Сервер успешно запущен");
+                ConsoleHelper.writeMessage("Сервер успешно запущен");
 
                 while (true) {
                     Socket clientSocket = server.accept();
@@ -21,7 +21,7 @@ public class Server {
                 }
             }
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            ConsoleHelper.writeMessage(e.getMessage());
         }
 
     }
@@ -103,7 +103,7 @@ public class Server {
                 entry.getValue().send(message);
             }
         } catch (IOException e) {
-            System.out.println("Не удалось отправить сообщение.");
+            ConsoleHelper.writeMessage("Не удалось отправить сообщение.");
         }
     }
 }
