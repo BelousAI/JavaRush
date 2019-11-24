@@ -23,11 +23,14 @@ public class Server {
         } catch (Exception e) {
             ConsoleHelper.writeMessage(e.getMessage());
         }
-
     }
 
     private static class Handler extends Thread {
         private Socket socket;
+
+        public Handler(Socket socket) {
+            this.socket = socket;
+        }
 
         @Override
         public void run() {
@@ -47,10 +50,6 @@ public class Server {
             } catch (IOException | ClassNotFoundException e) {
                 ConsoleHelper.writeMessage("Внимание! Произошла ошибка при обмене данными с удаленным адресом.");
             }
-        }
-
-        public Handler(Socket socket) {
-            this.socket = socket;
         }
 
         private String serverHandshake(Connection connection) throws IOException, ClassNotFoundException {
