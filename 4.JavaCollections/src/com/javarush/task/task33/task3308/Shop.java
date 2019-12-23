@@ -16,7 +16,7 @@ public class Shop {
 
     @XmlType(name = "goods")
     public static class Goods {
-        List<String> names;
+        public List<String> names;
     }
 
     @Override
